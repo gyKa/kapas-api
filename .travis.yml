@@ -9,6 +9,7 @@ install:
 
 script:
   - vendor/bin/phpcs --standard=PSR2 src/
+  - bin/phpunit
 
 deploy:
   provider: heroku
