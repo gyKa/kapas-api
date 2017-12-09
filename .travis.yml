@@ -4,8 +4,15 @@ php:
   - 7.1
   - 7.2
 
+env:
+  - DATABASE_URL="mysql://root@127.0.0.1:3306/tests"
+  - DATABASE_URL="postgres://postgres@127.0.0.1:5432/tests"
+
 install:
   - composer install --no-interaction
+
+before_script:
+  - bin/console doctrine:database:create
 
 script:
   - vendor/bin/phpcs --standard=PSR2 src/ tests/
