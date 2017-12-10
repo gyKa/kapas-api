@@ -13,16 +13,9 @@ install:
 
 before_script:
   - bin/console doctrine:database:create
-  - bin/console doctrine:migrations:migrate --no-interaction
+  - bin/console doctrine:schema:create
   - bin/console doctrine:schema:validate
 
 script:
   - vendor/bin/phpcs --standard=PSR2 src/Controller src/Entity src/Repository tests/
   - bin/phpunit
-
-deploy:
-  provider: heroku
-  api_key:
-    secure: TNAgzhWwRkPdbgPWxFwkoQPi1A+KgvwyLrH+MnOlW9eGgfstHY2eg5IwJdsIsVzf6MnaeBdmd8Qk8fkRa/fO1tbDfbG8UDXGLMsD2F+KTlSve39LSjNecYBpr8h3nhE198RHB8u4C+clakRGQUXdQOAQpNC0lSYKgA5t3eurf+V/r4uuDvs60jz2DLzK13/TrEVTk8BSv+EPIruQEnWonzOGcKmPMHN/BgTSFeAabTT6jFoa6k/61bW8+ud4sKGsQcmYCu3XsywA+5JXg6rUS9dw7YUZnK2APOQRSUX1UaNpPxZKuSLNzIdd8j5TdRQEzuZh7zueX1OHbpSOYVAOfJIz5N0a8v9AUvAKxITfaVVyRbjVCENoA/L4t11GO+kZ1Hor6+ZybdsuIfR7MKwVrE3HTZwjwBn5qnLb8w7Dzo0sr4c76xMVanjzhWCPUzowbgGFK1tCGNtqeKttWQpByY20uJepkgFHC4zaR2VrwDd4wedU+PqEW6GpYCUJ9lJNtHELJ0gwsPLOcVwOje7PEB6XPwB8bz1Rj5xBhN6GEaqfw2pVCzf6FzIs/stOC8ihmLupB/IVCtiei2iBschBa4wDw0gYh2ao2h7irCPKt+FFfxTmcAQk0Nddupm+OtuE94/NHEEbsmzNfbAxbhlBCGpsKVrPfTtWClEabWgSYQk=
-  run:
-    - "bin/console doctrine:migrations:migrate --no-interaction"
