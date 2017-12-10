@@ -1,6 +1,7 @@
 # kapas-api
 
 [![Build Status](https://travis-ci.org/gyKa/kapas-api.svg?branch=master)](https://travis-ci.org/gyKa/kapas-api)
+[![Dependency Status](https://gemnasium.com/badges/github.com/gyKa/kapas-api.svg)](https://gemnasium.com/github.com/gyKa/kapas-api)
 
 ## Requirements
 
