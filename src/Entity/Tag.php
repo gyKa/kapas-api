@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Tag
 {
-	/**
+    /**
      * @var int
      *
      * @ORM\Id
@@ -39,7 +39,8 @@ class Tag
      */
     private $bookmarks;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->bookmarks = new \Doctrine\Common\Collections\ArrayCollection();
     }
 

@@ -17,7 +17,7 @@ before_script:
   - bin/console doctrine:schema:validate
 
 script:
-  - vendor/bin/phpcs --standard=PSR2 src/ tests/
+  - vendor/bin/phpcs --standard=PSR2 src/Controller src/Entity src/Repository tests/
   - bin/phpunit
 
 deploy:
